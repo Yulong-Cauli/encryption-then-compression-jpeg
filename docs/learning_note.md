@@ -34,7 +34,7 @@ JPEG 压缩的核心机制是对图像进行分块（通常是 $8\times8$），�
 
 为了适配 JPEG 的色彩采样（如 4:2:0），块的大小建议设为 **$16\times16$** 。算法包含以下四个独立步骤：
 
-![论文框架](assets\Structure.png)
+![论文框架](../assets/Structure.png)
 <center style="font-size:14px;color:#000000;"><b>图1.</b> 论文中提到的框架图，重点在 Fig.3 ，Fig.2 与 Fig.4 是他的具体打乱方法，对应蓝色框和黄色框</center>
 
 ### Step 1: 块分割与置乱 (Block Scrambling)
@@ -244,4 +244,4 @@ encryption_then_compression("encrypted.jpg", "restored.jpg", seed=123456, mode='
 
 **结果**：
 
-![](assets\result.png)
+![](../assets/result.png)
