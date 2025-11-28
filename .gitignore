@@ -1,13 +1,16 @@
+
 __pycache__/
 *.pyc
+
 
 .venv/
 venv/
 env/
-
 .idea/
 
-*.jpg
-*.png
+
+/*.jpg
+/*.png
+
 
 !assets/
