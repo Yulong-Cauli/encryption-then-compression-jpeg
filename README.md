@@ -243,7 +243,7 @@ python src/etc_tool.py assets/encrypted.jpg assets/restored.jpg --mode decrypt -
   * **论文**: *An Encryption-then-Compression System for JPEG Standard*
   * **作者**: Kenta Kurihara, Sayaka Shiota, and Hitoshi Kiya
   * **会议**: Picture Coding Symposium (PCS), 2015
-  * **DOI**: [10.1109/PCS.2015.7170058](https://www.google.com/search?q=https://doi.org/10.1109/PCS.2015.7170058)
+  * **DOI**: [10.1109/PCS.2015.7170059](https://www.google.com/search?q=https://doi.org/10.1109/PCS.2015.7170059)
 
 -----
 
