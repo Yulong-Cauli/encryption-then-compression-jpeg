@@ -1,3 +1,7 @@
+This project was inspired by observing image obfuscation techniques used in the wild for content sharing. Out of curiosity about the underlying mechanics, I researched a related academic paper and implemented this system.  
+
+这个项目的灵感来自于观察真实网络环境中用于内容分享的图片混淆技术。出于对底层机制的好奇，我研究了一篇相关学术论文并复现了这个系统
+
 # JPEG Encryption-then-Compression (EtC) System
 
 [](https://www.python.org/)
