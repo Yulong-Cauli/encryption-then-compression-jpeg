@@ -74,6 +74,8 @@ class TensorRTInferenceEngine:
         for binding in self.engine:
             # Get binding dimensions
             shape = self.engine.get_binding_shape(binding)
+            # Note: For explicit batch engines, shape already includes batch dimension
+            # We multiply by max_batch_size for compatibility with dynamic batching
             size = trt.volume(shape) * self.max_batch_size
             dtype = trt.nptype(self.engine.get_binding_dtype(binding))
             
@@ -176,13 +178,20 @@ class TensorRTInferenceEngine:
     
     def __del__(self):
         """清理资源"""
-        # Free CUDA memory
-        for inp in self.inputs:
-            inp['device'].free()
-        for out in self.outputs:
-            out['device'].free()
-        
-        logger.info("TensorRT resources freed")
+        try:
+            # Free CUDA memory
+            if hasattr(self, 'inputs'):
+                for inp in self.inputs:
+                    if 'device' in inp:
+                        inp['device'].free()
+            if hasattr(self, 'outputs'):
+                for out in self.outputs:
+                    if 'device' in out:
+                        out['device'].free()
+            
+            logger.info("TensorRT resources freed")
+        except Exception as e:
+            logger.warning(f"Error during cleanup: {e}")
 
 
 class TensorRTEngineBuilder:

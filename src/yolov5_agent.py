@@ -164,6 +164,9 @@ class YOLOv5Agent:
         # FPS counter
         self.fps_counter = FPSCounter()
         
+        # Pre-compute color palette for better performance
+        self._color_palette = self._generate_color_palette()
+        
         logger.info("YOLOv5 Agent initialized")
     
     def preprocess(self, image: np.ndarray) -> Tuple[np.ndarray, float, Tuple[int, int]]:
@@ -377,10 +380,17 @@ class YOLOv5Agent:
         
         return result
     
+    def _generate_color_palette(self) -> Dict[int, Tuple[int, int, int]]:
+        """Pre-generate color palette for all classes"""
+        palette = {}
+        for class_id in range(len(self.COCO_CLASSES)):
+            np.random.seed(class_id)
+            palette[class_id] = tuple(map(int, np.random.randint(0, 255, 3)))
+        return palette
+    
     def _get_color(self, class_id: int) -> Tuple[int, int, int]:
-        """Get color for class"""
-        np.random.seed(class_id)
-        return tuple(map(int, np.random.randint(0, 255, 3)))
+        """Get color for class from pre-computed palette"""
+        return self._color_palette.get(class_id, (255, 255, 255))
     
     def cleanup(self):
         """清理资源"""
