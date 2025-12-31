@@ -9,6 +9,18 @@ This project was inspired by observing image obfuscation techniques used in the 
 
 An unofficial Python implementation of the paper **"An Encryption-then-Compression System for JPEG Standard"** (Kurihara et al.). This tool allows images to be scrambled (encrypted) while maintaining compatibility with standard JPEG compression algorithms, ensuring they can be restored flawlessly after compression.
 
+## 🎯 NEW: YOLOv5 Detection Agent for Jetson Nano
+
+This repository now includes a high-performance object detection system optimized for NVIDIA Jetson Nano! Features include:
+
+- **TensorRT Acceleration** with FP16 precision for Maxwell GPU
+- **CUDA Stream async processing** for maximum performance
+- **Memory circuit breaker** to prevent OOM (< 200MB threshold)
+- **CSI Camera support** with GStreamer pipeline
+- **Complete toolchain** from model conversion to deployment
+
+👉 **[See Detection Agent Documentation](README_DETECTION.md)**
+
 -----
 
 ## 🖼️ Demo
@@ -31,13 +43,19 @@ An unofficial Python implementation of the paper **"An Encryption-then-Compressi
 
 ```text
 ENCRYPTION_THEN_COMPRESSION
-├── assets/                 # Demo images & diagrams
-├── docs/                   # Documentation & Notes
-│   └── learning_note.md    # Algorithm analysis
-├── src/                    # Source Code
-│   └── etc_tool.py         # Main CLI tool
-├── requirements.txt        # Dependencies
-└── README.md               # This file
+├── assets/                       # Demo images & diagrams
+├── docs/                         # Documentation & Notes
+│   ├── learning_note.md          # Algorithm analysis
+│   └── jetson_nano_setup.md      # Jetson Nano environment setup
+├── src/                          # Source Code
+│   ├── etc_tool.py               # JPEG encryption tool
+│   ├── trt_engine.py             # TensorRT inference engine
+│   └── yolov5_agent.py           # YOLOv5 detection agent
+├── requirements.txt              # Dependencies
+├── setup_jetson.sh               # Jetson Nano setup script
+├── run_detection.py              # Detection main script
+├── README.md                     # This file
+└── README_DETECTION.md           # Detection agent documentation
 ```
 
 -----
