@@ -156,6 +156,11 @@ result = agent.draw_detections(image, detections)
 
 **CSI 摄像头管道：**
 
+支持的摄像头：
+- ✅ IMX219 (Raspberry Pi Camera v2) - 8MP
+- ✅ IMX477 (Raspberry Pi HQ Camera) - 12MP  
+- ✅ 其他兼容 nvarguscamerasrc 的 CSI 摄像头
+
 ```python
 from src.yolov5_agent import GStreamerCamera
 
@@ -426,6 +431,11 @@ result = agent.draw_detections(image, detections)
 #### 3. GStreamer Camera Interface
 
 **CSI Camera Pipeline:**
+
+Supported cameras:
+- ✅ IMX219 (Raspberry Pi Camera v2) - 8MP
+- ✅ IMX477 (Raspberry Pi HQ Camera) - 12MP
+- ✅ Other CSI cameras compatible with nvarguscamerasrc
 
 ```python
 from src.yolov5_agent import GStreamerCamera

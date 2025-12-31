@@ -3,6 +3,11 @@
 """
 Example 3: GStreamer Camera Integration
 演示 GStreamer CSI 摄像头集成
+
+支持的摄像头 / Supported Cameras:
+- IMX219 (Raspberry Pi Camera v2) - 8MP
+- IMX477 (Raspberry Pi HQ Camera) - 12MP
+- 其他兼容 nvarguscamerasrc 的 CSI 摄像头 / Other CSI cameras compatible with nvarguscamerasrc
 """
 
 import sys

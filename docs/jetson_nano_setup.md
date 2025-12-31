@@ -78,6 +78,9 @@ print(f"TensorRT Version: {trt.__version__}")
 2. **功率模式**: 使用 `sudo nvpmodel -m 0` 切换到 MAXN 模式以获得最佳性能
 3. **散热**: 确保有良好的散热环境，推荐使用风扇
 4. **相机**: CSI 摄像头需要正确连接到 CSI 接口
+   - 支持 IMX219 (Raspberry Pi Camera v2)
+   - 支持 IMX477 (Raspberry Pi HQ Camera)
+   - 其他兼容 nvarguscamerasrc 的 CSI 摄像头
 
 ## 性能优化建议 / Performance Optimization
 
